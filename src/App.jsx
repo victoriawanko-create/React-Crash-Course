@@ -10,7 +10,7 @@ function App() {
 
 function onTodoDelete() {
   setShowModal(true)
-  console.log('onToDoDelete')
+  console.log('onTodoDelete')
 }
 
   return (
@@ -23,9 +23,9 @@ function onTodoDelete() {
           <button onClick={() => setShowModal(true)}>Add todo</button>
          </div>
           <div className ="todo__wrapper">
-            <Todo  onToDoDelete={onToDoDelete} title="Finish Frontend Simplified" />
-            <Todo  onToDoDelete={onToDoDelete} title="Finished Interview Section" />
-            <Todo  onToDoDelete={onToDoDelete} title="Land a $100k Job" />
+            <Todo  onToDoDelete={onTodoDelete} title="Finish Frontend Simplified" />
+            <Todo  onToDoDelete={onTodoDelete} title="Finished Interview Section" />
+            <Todo  onToDoDelete={onTodoDelete} title="Land a $100k Job" />
          </div> 
     {showModal && <Modal title="Confirm Delete?"  />}
       </div>
