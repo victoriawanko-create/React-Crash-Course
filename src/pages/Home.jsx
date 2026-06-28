@@ -18,12 +18,11 @@ function Home() {
     fetchUsers();
 }, []);
 
-const pixels = "3px";
-
-return (
+function renderUsers() {
+    return (
     <div>
     {users.map((user) => (
-        <Link to={`/user/${user.id}`} key={user.id}>
+        <Link to={`/users/${user.id}`} key={user.id}>
     <User
     pixels={pixels}
     key={user.id}
@@ -36,6 +35,20 @@ return (
     ))}
      </div>  
  );
-}   
+}  
+    
+function renderSkeletonLoading() {
+    return <h1>Loading...</h1>
+}
+
+const pixels = "3px"; 
+
+return (
+    <div>
+        {users.length ? renderUsers() : <h1>Loading...</h1>}
+    </div>
+)
+}
+
 
 export default Home
